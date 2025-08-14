@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando la Psicología</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .tab-button {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-button:hover {
+            background-color: #555;
+        }
+        
+        .tab-button.active {
+            background-color: #9d50bb;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .tab-content {
+            display: none;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            color: #6e48aa;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #9d50bb;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #9d50bb;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .image-container img:hover {
+            transform: scale(1.03);
+        }
+        
+        .psychologist-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .psychologist-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #9d50bb;
+        }
+        
+        .branch-card {
+            background-color: #f0e6ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .tab-button {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .psychologist-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explorando el Mundo de la Psicología</h1>
+        <p>Descubre la ciencia de la mente y el comportamiento humano</p>
+    </header>
+    
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'inicio')">Inicio</button>
+        <button class="tab-button" onclick="openTab(event, 'historia')">Historia y Moderna</button>
+        <button class="tab-button" onclick="openTab(event, 'ramas')">Ramas y Psicólogos</button>
+        <button class="tab-button" onclick="openTab(event, 'ideologias')">Ideologías</button>
+    </div>
+    
+    <div class="container">
+        <!-- Pestaña de Inicio -->
+        <div id="inicio" class="tab-content active">
+            <h2>Bienvenido al Estudio de la Psicología</h2>
+            <p>La psicología es la ciencia que estudia los procesos mentales, las sensaciones, las percepciones y el comportamiento del ser humano, en relación con el medio ambiente físico y social que lo rodea.</p>
+            
+            <div class="image-container">
+                <img src="images/psicologia1.jpg" alt="Cerebro humano">
+                <img src="images/psicologia2.jpg" alt="Persona meditando">
+                <img src="images/psicologia3.jpg" alt="Terapia psicológica">
+            </div>
+            
+            <p>Esta disciplina académica y ciencia aplicada busca comprender a los individuos y grupos mediante la investigación de casos específicos y el establecimiento de principios generales.</p>
+            
+            <h3>¿Por qué estudiar psicología?</h3>
+            <p>La psicología nos ayuda a comprender mejor el comportamiento humano, mejorar las relaciones interpersonales, desarrollar estrategias para el bienestar mental y contribuir a resolver problemas sociales.</p>
+        </div>
+        
+        <!-- Pestaña de Historia -->
+        <div id="historia" class="tab-content">
+            <h2>Historia y Psicología Moderna</h2>
+            
+            <h3>Orígenes de la Psicología</h3>
+            <p>La psicología tiene sus raíces en la filosofía y la fisiología. Wilhelm Wundt estableció el primer laboratorio de psicología experimental en Leipzig, Alemania, en 1879, marcando el nacimiento de la psicología como ciencia independiente.</p>
+            
+            <div class="image-container">
+                <img src="images/wundt.jpg" alt="Wilhelm Wundt">
+                <img src="images/laboratorio.jpg" alt="Laboratorio de Wundt">
+            </div>
+            
+            <h3>Evolución Histórica</h3>
+            <p>La psicología ha pasado por varias etapas: desde el estructuralismo de Wundt y Titchener, el funcionalismo de William James, hasta el conductismo de Watson y Skinner en la primera mitad del siglo XX.</p>
+            
+            <h3>Psicología Moderna</h3>
+            <p>En el siglo XX, la psicología se diversificó en múltiples enfoques: conductismo, psicoanálisis, humanismo, cognitivismo y más recientemente, la neurociencia cognitiva. Hoy integra perspectivas biológicas, psicológicas y sociales.</p>
+            
+            <div class="image-container">
+                <img src="images/tecnologia.jpg" alt="Tecnología en psicología">
+                <img src="images/investigacion.jpg" alt="Investigación psicológica">
+            </div>
+        </div>
+        
+        <!-- Pestaña de Ramas -->
+        <div id="ramas" class="tab-content">
+            <h2>Ramas de la Psicología y Psicólogos Famosos</h2>
+            
+            <h3>Principales Ramas de la Psicología</h3>
+            
+            <div class="branch-card">
+                <h4>Psicología Clínica</h4>
+                <p>Se centra en el diagnóstico y tratamiento de trastornos mentales y problemas emocionales. Utiliza diversas terapias como la cognitivo-conductual, psicoanalítica y humanista.</p>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Psicología Cognitiva</h4>
+                <p>Estudia procesos mentales como percepción, memoria, pensamiento y lenguaje. Investiga cómo procesamos, almacenamos y recuperamos información.</p>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Psicología del Desarrollo</h4>
+                <p>Examina los cambios psicológicos a lo largo del ciclo vital humano, desde la infancia hasta la vejez, incluyendo hitos del desarrollo físico, cognitivo y socioemocional.</p>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Psicología Social</h4>
+                <p>Analiza cómo las personas son influenciadas por los demás y por el contexto social. Estudia temas como actitudes, prejuicios, relaciones interpersonales y dinámica de grupos.</p>
+            </div>
+            
+            <h3>Psicólogos Famosos</h3>
+            
+            <div class="psychologist-card">
+                <img src="images/freud.jpg" alt="Sigmund Freud">
+                <div>
+                    <h4>Sigmund Freud (1856-1939)</h4>
+                    <p>Padre del psicoanálisis, desarrolló teorías sobre el inconsciente, los sueños y la sexualidad infantil. Su enfoque ha influenciado profundamente la psicología y la cultura occidental.</p>
+                    <p><strong>Contribución principal:</strong> Teoría del inconsciente y estructura de la personalidad (ello, yo y superyó).</p>
+                </div>
+            </div>
+            
+            <div class="psychologist-card">
+                <img src="images/skinner.jpg" alt="B.F. Skinner">
+                <div>
+                    <h4>B.F. Skinner (1904-1990)</h4>
+                    <p>Principal exponente del conductismo, investigó el condicionamiento operante. Defendió que el comportamiento está determinado por sus consecuencias (refuerzos y castigos).</p>
+                    <p><strong>Contribución principal:</strong> Cámara de condicionamiento operante ("Skinner box") y refuerzo positivo/negativo.</p>
+                </div>
+            </div>
+            
+            <div class="psychologist-card">
+                <img src="images/rogers.jpg" alt="Carl Rogers">
+                <div>
+                    <h4>Carl Rogers (1902-1987)</h4>
+                    <p>Pionero de la psicología humanista, desarrolló la terapia centrada en el cliente. Enfatizó la importancia de la autenticidad, la empatía y la aceptación incondicional en la terapia.</p>
+                    <p><strong>Contribución principal:</strong> Enfoque no directivo y concepto de autorrealización.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pestaña de Ideologías -->
+        <div id="ideologias" class="tab-content">
+            <h2>Ideologías y Pensamientos en Psicología</h2>
+            
+            <h3>Principales Escuelas de Pensamiento</h3>
+            
+            <div class="branch-card">
+                <h4>Psicoanálisis</h4>
+                <p>Fundado por Freud, enfatiza el inconsciente, los impulsos instintivos y los conflictos internos como determinantes del comportamiento. Utiliza técnicas como la asociación libre y el análisis de sueños.</p>
+                <div class="image-container">
+                    <img src="images/psicoanalisis.jpg" alt="Símbolo psicoanálisis">
+                </div>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Conductismo</h4>
+                <p>Se centra en el comportamiento observable, considerando que la conducta es resultado de estímulos ambientales y respuestas aprendidas. Rechaza el estudio de procesos mentales no observables.</p>
+                <div class="image-container">
+                    <img src="images/conductismo.jpg" alt="Experimento conductista">
+                </div>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Cognitivismo</h4>
+                <p>Estudia los procesos mentales como la percepción, memoria y pensamiento, considerando a la mente como un procesador de información. Surgió como respuesta a las limitaciones del conductismo.</p>
+                <div class="image-container">
+                    <img src="images/cognitivismo.jpg" alt="Procesamiento mental">
+                </div>
+            </div>
+            
+            <div class="branch-card">
+                <h4>Humanismo</h4>
+                <p>Enfatiza el libre albedrío, el crecimiento personal y la autorrealización, con figuras como Maslow y Rogers. Considera al ser humano como un todo (enfoque holístico) con potencial de desarrollo.</p>
+                <div class="image-container">
+                    <img src="images/humanismo.jpg" alt="Pirámide de Maslow">
+                </div>
+            </div>
+            
+            <h3>Corrientes Contemporáneas</h3>
+            <p>La psicología actual integra múltiples perspectivas, destacando:</p>
+            <ul>
+                <li><strong>Neurociencia cognitiva:</strong> Estudia las bases neurales de los procesos mentales</li>
+                <li><strong>Psicología positiva:</strong> Se centra en el estudio de la felicidad, el bienestar y las fortalezas humanas</li>
+                <li><strong>Enfoques sistémicos:</strong> Consideran al individuo en su contexto familiar y social</li>
+                <li><strong>Psicología evolucionista:</strong> Examina cómo los procesos psicológicos han evolucionado para resolver problemas de adaptación</li>
+            </ul>
+            
+            <div class="image-container">
+                <img src="images/neurociencia.jpg" alt="Neurociencia">
+                <img src="images/bienestar.jpg" alt="Meditación y bienestar">
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Explorando la Psicología - Todos los derechos reservados</p>
+        <p>Página educativa creada con fines informativos</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Desactivar todos los botones de pestañas
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
