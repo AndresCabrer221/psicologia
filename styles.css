@@ -1,0 +1,274 @@
+/* styles.css - Estilo Elegante para Sitio de Psicología */
+
+:root {
+    --color-primary: #3a506b; /* Azul oscuro sofisticado */
+    --color-secondary: #5bc0be; /* Turquesa moderno */
+    --color-accent: #e6b89c; /* Coral suave */
+    --color-light: #f8f7f2; /* Blanco roto */
+    --color-dark: #1c2541; /* Azul noche */
+    --color-text: #333333; /* Gris oscuro para texto */
+    --color-text-light: #f8f7f2; /* Texto claro */
+    --font-main: 'Cormorant Garamond', serif;
+    --font-headings: 'Montserrat', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.8;
+    color: var(--color-text);
+    background-color: var(--color-light);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+    color: var(--color-text-light);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-accent);
+}
+
+header h1 {
+    font-size: 3.2rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Navegación */
+nav {
+    background-color: var(--color-primary);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-family: var(--font-headings);
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 5rem;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border-left: 4px solid var(--color-accent);
+}
+
+section:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-secondary);
+}
+
+/* Grid de imágenes */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Tarjetas */
+.card {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    background: white;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 1.8rem;
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: var(--color-text);
+    opacity: 0.9;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 5rem;
+}
+
+footer p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* Efectos especiales */
+::selection {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.4rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    section {
+        padding: 2rem;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 3rem 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}
