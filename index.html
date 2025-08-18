@@ -1,4 +1,3 @@
-<!-- ARCHIVO 1: index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,11 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Psicología Contemporánea</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales para las animaciones */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            background-blend-mode: lighten;
+        }
+        
+        @keyframes floatText {
+            0% { transform: translateY(0); color: #333; }
+            50% { transform: translateY(-5px); color: #5d5dff; }
+            100% { transform: translateY(0); color: #333; }
+        }
+        
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .animated-text {
+            animation: floatText 3s ease-in-out infinite;
+        }
+        
+        .floating-image {
+            animation: floatImage 4s ease-in-out infinite;
+        }
+        
+        .psychology-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .psychology-table th, .psychology-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .psychology-table th {
+            background-color: #5d5dff;
+            color: white;
+        }
+        
+        .psychology-table tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Explorando la Mente Humana</h1>
+            <h1 class="animated-text">Explorando la Mente Humana</h1>
             <p>Un viaje por la psicología y sus dimensiones</p>
         </div>
     </header>
@@ -29,21 +82,59 @@
             <h2>Introducción a la Psicología</h2>
             <p>La psicología es una disciplina científica fascinante que estudia los procesos mentales, el comportamiento humano y las complejas interacciones entre pensamiento, emoción y acción. Como puente entre las ciencias sociales y las neurociencias, su objetivo es comprender cómo percibimos, aprendemos, sentimos y nos relacionamos con el mundo que nos rodea.</p>
             
+            <!-- Tabla agregada -->
+            <table class="psychology-table">
+                <thead>
+                    <tr>
+                        <th>Área de la Psicología</th>
+                        <th>Enfoque Principal</th>
+                        <th>Aplicaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clínica</td>
+                        <td>Salud mental y trastornos psicológicos</td>
+                        <td>Terapia, diagnóstico, tratamiento</td>
+                    </tr>
+                    <tr>
+                        <td>Cognitiva</td>
+                        <td>Procesos mentales (memoria, pensamiento)</td>
+                        <td>Educación, inteligencia artificial</td>
+                    </tr>
+                    <tr>
+                        <td>Social</td>
+                        <td>Interacciones humanas</td>
+                        <td>Publicidad, relaciones laborales</td>
+                    </tr>
+                </tbody>
+            </table>
+            
             <div class="image-grid">
                 <div class="card">
-                    <img src="mente.jpg" alt="Mente humana">
+                    <img src="mente.jpg" alt="Mente humana" class="floating-image">
                     <div class="card-content">
                         <h3>La Complejidad de la Mente</h3>
                         <p>Explorando los misterios de la conciencia humana y los procesos cognitivos.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="terapia.jpg" alt="Terapia psicológica">
+                    <img src="terapia.jpg" alt="Terapia psicológica" class="floating-image">
                     <div class="card-content">
                         <h3>Psicología Clínica</h3>
                         <p>El arte y ciencia de ayudar a las personas a superar sus desafíos mentales.</p>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Texto con movimiento avanzado -->
+            <div style="margin: 30px 0; text-align: center;">
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate;">Descubre</h3>
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate 0.5s;">los</h3>
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate 1s;">secretos</h3>
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate 1.5s;">de</h3>
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate 2s;">la</h3>
+                <h3 style="display: inline-block; animation: floatText 2s ease-in-out infinite alternate 2.5s;">mente</h3>
             </div>
         </section>
     </div>
@@ -54,7 +145,4 @@
         </div>
     </footer>
 </body>
-
 </html>
-
-
