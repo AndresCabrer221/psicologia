@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Educativos | Psicología Contemporánea</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de videos */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-blend-mode: lighten;
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-info h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        .video-info p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+            color: #2c3e50;
+            font-size: 2.2em;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #3498db;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Recursos Multimedia</h1>
+            <p>Videos educativos sobre psicología</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="ramas.html">Ramas</a></li>
+            <li><a href="ideologias.html">Ideologías</a></li>
+            <li><a href="videos.html">Videos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">Explora Nuestros Videos</h2>
+        
+        <div class="video-container">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/zmHsmvDdMc8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Introducción a la Psicología</h3>
+                    <p>Un recorrido fundamental por los conceptos básicos de la psicología moderna y sus principales enfoques teóricos.</p>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/hmaHuOielo8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Teorías del Desarrollo</h3>
+                    <p>Análisis comparativo de las principales teorías sobre el desarrollo humano a lo largo del ciclo vital.</p>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/1eZepcg6aC0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Neurociencia Cognitiva</h3>
+                    <p>Exploración de las bases neurológicas de los procesos mentales y el comportamiento humano.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Psicología Contemporánea | Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
